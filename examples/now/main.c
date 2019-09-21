@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 int main(void) {
-    mem_t mem;
+    size_t mem;
     char mem_str[40];
     char conv_str[50];
 

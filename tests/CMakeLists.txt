@@ -1,0 +1,10 @@
+file(GLOB C_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
+add_custom_target(tests)
+include_directories(../lib/dtest)
+
+foreach (module ${C_FILES})
+   get_filename_component(name ${module} NAME_WE)
+   set(libname ts-${name})
+   add_library(${libname} SHARED ${module})
+   add_dependencies(tests ${libname})
+endforeach ()

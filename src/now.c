@@ -16,7 +16,7 @@ static uint8_t mem_devices[7] = {
 
 /* public */
 
-mem_t memnow(enum mem_device_e dev) {
+size_t memnow(enum mem_device_e dev) {
     if (dev > 6) {
         dev = 0;
     }
@@ -25,7 +25,7 @@ mem_t memnow(enum mem_device_e dev) {
 
     getrusage(1, &ys);
 
-    mem_t dest = (mem_t )ys.ru_maxrss;
+    size_t dest = (size_t )ys.ru_maxrss;
 
     return dest;
 }

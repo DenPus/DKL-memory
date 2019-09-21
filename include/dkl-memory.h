@@ -7,8 +7,7 @@
 #pragma once
 
 #include <stdint.h>
-
-typedef uint64_t mem_t;
+#include <stddef.h>
 
 typedef enum mem_device_e {
     MEM_DEV_PROCESS,
@@ -30,6 +29,6 @@ typedef struct mem_fmt_item_s {
     int64_t val;
 }                mem_fmt_item_t;
 
-extern mem_t memnow(enum mem_device_e dev);
+extern size_t memnow(enum mem_device_e dev);
 
-char *memconv(char *dest, mem_t *src, enum mem_fmt_e fmt);
+char *memconv(char *dest, size_t *src, enum mem_fmt_e fmt);
