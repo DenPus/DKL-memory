@@ -6,7 +6,7 @@ set(CMAKE_C_STANDARD 11)
 file(GLOB src_ls "src/*.c")
 file(GLOB include_ls "include/*.h" "include/dkl-memory/*.h")
 
-install(DIRECTORY include/dkl-memory/ DESTINATION include/dkl-memory)
+install(DIRECTORY include DESTINATION include)
 
 add_library(dkl-memory ${include_ls} ${src_ls})
 

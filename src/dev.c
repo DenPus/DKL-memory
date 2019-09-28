@@ -1,5 +1,5 @@
 /*
- * now.c
+ * dev.c
  *
  * Memory from device
  * ===================
