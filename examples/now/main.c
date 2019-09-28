@@ -12,7 +12,7 @@ int main(void) {
     char mem_str[40];
     char conv_str[50];
 
-    mem = memnow(MEM_DEV_PROCESS);
+    mem = memdev(MEM_DEV_PROCESS);
     memconv(mem_str, &mem, 0);
     printf("-- MEM_DEV_PROCESS -> %lu\n   %s -> %s\n", mem, mem_str, conv_str);
 

@@ -8,7 +8,7 @@
 #include "../src/now.c"
 
 CASE(kb) {
-        assert_le(1, memnow(0));
+        assert_le(1, memdev(0));
 }
 
 SUITE(kb);

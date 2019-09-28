@@ -1,6 +1,9 @@
 {
   "language": "C",
+  "title": "DKL-memory",
   "name": "dkl-memory",
-  "version": "0.1.1.0",
-  "license": "GPL-2.0"
+  "description": "DKL library get memory size form devices",
+  "version": "0.1.2.0",
+  "license": "GPL-2.0",
+  "homepage": "https://github.com/Denpus/DKL-memory"
 }

@@ -5,7 +5,7 @@
  */
 
 #include "dtest.h"
-#include "../src/convert.c"
+#include "../src/conv.c"
 
 CASE(kb) {
     char dst[100];

@@ -1,12 +1,18 @@
 /*
- * 
- * Author:   denkar
- * Created:  29.08.19 15:25 (base 24.05.19 15:50)
+ * conv.c
  *
- * Convert memory to string
+ * Convert size
+ * ============
+ * Convert size by format to string
+ *
+ * Author     :   denkar
+ * Created    :   29.08.19 15:25 (base 24.05.19 15:50)
+ *
+ * Copyright (c) 2019 DenKar <denkar@mail.ru>
  */
 
-#include "main.h"
+#include <stdio.h>
+#include <dkl-memory/conv.h>
 
 struct mem_fmt_item_s mem_fmt_item_ls[8] = {
         {
