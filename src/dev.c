@@ -12,7 +12,7 @@
  */
 
 #include <sys/resource.h>
-#include <dkl-memory/device.h>
+#include <dkl-memory/dev.h>
 
 /* static */
 

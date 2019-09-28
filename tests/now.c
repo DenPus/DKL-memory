@@ -5,7 +5,7 @@
  */
 
 #include "dtest.h"
-#include "../src/now.c"
+#include "../src/dev.c"
 
 CASE(kb) {
         assert_le(1, memdev(0));

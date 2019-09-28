@@ -1,0 +1,4 @@
+[submodule "lib/dtest"]
+	path = lib/dtest
+	url = https://github.com/Denpus/dtest
+	branch = dev

@@ -6,5 +6,5 @@
 
 #pragma once
 
-#include <dkl-memory/device.h>
+#include <dkl-memory/dev.h>
 #include <dkl-memory/conv.h>
