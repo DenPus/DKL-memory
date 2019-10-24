@@ -26,7 +26,10 @@ install(TARGETS @name
 
 link_libraries(@name)
 
-# examples
+if (NOT exd_examples)
+    add_subdirectory(examples)
+endif ()
 
-add_subdirectory(examples)
-add_subdirectory(tests)
+if (NOT exd_tests)
+    add_subdirectory(tests)
+endif ()

@@ -1,4 +1,4 @@
-dkl-memory v0.1.2.1
+dkl-memory v0.1.2.2
 ====================================
 DKL library get memory size form devices
 
@@ -14,4 +14,4 @@ DKL library get memory size form devices
 * Homepage: [https://github.com/Denpus/DKL-memory]
 * Language code: C
 * Author: DenKar
-* License: @license
+* License: GPL-2.0
