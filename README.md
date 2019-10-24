@@ -1,4 +1,4 @@
-dkl-memory v0.1.2.2
+dkl-mem v0.1.3.0
 ====================================
 DKL library get memory size form devices
 
