@@ -26,4 +26,4 @@ typedef struct mem_fmt_item_s {
 }                mem_fmt_item_t;
 
 
-char *memconv(char *dest, size_t *src, enum mem_fmt_e fmt);
+extern int memconv(char *dest, size_t *src, enum mem_fmt_e fmt);

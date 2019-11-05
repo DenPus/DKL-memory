@@ -3,7 +3,9 @@
   "title": "DKL-memory",
   "name": "dkl-mem",
   "description": "DKL library get memory size form devices",
-  "version": "0.1.3.0",
+  "version": "0.1.5.0",
   "license": "GPL-2.0",
-  "homepage": "https://github.com/Denpus/DKL-memory"
+  "homepage": "https://github.com/Denpus/DKL-memory",
+  "dependencies": {
+  }
 }

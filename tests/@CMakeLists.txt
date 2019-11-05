@@ -1,0 +1,30 @@
+file(GLOB C_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
+add_custom_target(@name-tests)
+
+# Dependencies
+@for(dependencies)
+# -- @key
+
+if (NOT TARGET @key AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/lib/@key/CMakeLists.txt")
+    add_subdirectory(lib/@key)
+endif()
+
+if (TARGET @key)
+    link_libraries(@key)
+endif()
+
+include_directories(
+    ../lib/@key/include/@key
+    ../lib/@key/include
+    ../lib/@key
+    )
+@end
+include_directories(../headers)
+
+foreach (module ${C_FILES})
+    get_filename_component(name ${module} NAME_WE)
+    set(libname @name-ts-${name})
+    add_library(${libname} SHARED ${module})
+    target_link_libraries(${libname} PRIVATE @name)
+    add_dependencies(@name-tests ${libname})
+endforeach ()

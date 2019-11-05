@@ -1,2 +1,3 @@
-add_executable(${PROJECT_NAME}-now main.c)
-target_link_libraries(${PROJECT_NAME}-now PRIVATE ${PROJECT_NAME})
+add_executable(dkl-mem-now main.c)
+
+target_link_libraries(dkl-mem-now dkl-mem)

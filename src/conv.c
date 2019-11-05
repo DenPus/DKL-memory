@@ -12,7 +12,7 @@
  */
 
 #include <stdio.h>
-#include <dkl-memory/conv.h>
+#include "conv.h"
 
 struct mem_fmt_item_s mem_fmt_item_ls[8] = {
         {
@@ -71,7 +71,7 @@ mem_fmt_item_t *mem_get_fmt_item(size_t mem, enum mem_fmt_e fmt) {
     return mem_fmt_item;
 }
 
-char *memconv(char *dest, size_t *src, enum mem_fmt_e fmt) {
+int memconv(char *dest, size_t *src, enum mem_fmt_e fmt) {
     double         val;
     mem_fmt_item_t *mem_fmt_item = mem_get_fmt_item(*src, fmt);
 
@@ -81,7 +81,7 @@ char *memconv(char *dest, size_t *src, enum mem_fmt_e fmt) {
         val = *src;
     }
 
-    sprintf(dest, "%.2f %s", val, mem_fmt_item->name);
+    int size = sprintf(dest, "%.2f %s", val, mem_fmt_item->name);
 
-    return dest;
+    return size;
 }
