@@ -11,57 +11,64 @@
  * Copyright (c) 2019 DenKar <denkar@mail.ru>
  */
 
-#include <stdio.h>
 #include "conv.h"
+#include <stdio.h>
 
-struct mem_fmt_item_s mem_fmt_item_ls[8] = {
+struct dmem_fmt_item_s dmem_fmt_ls[8] = {
         {
-                .id = MEM_FMT_B,
+                .id = DMEM_FMT_B,
                 .name = "b",
                 .title = "bite",
                 .val = 0l,
+                .byte = 0l,
         },
         {
-                .id = MEM_FMT_BT,
+                .id = DMEM_FMT_BT,
                 .name = "bt",
                 .title = "byte",
-                .val = 8l
+                .val = 8l,
+                .byte = DMEM_SZ_BT,
         },
         {
-                .id = MEM_FMT_KB,
+                .id = DMEM_FMT_KB,
                 .name = "kb",
                 .title = "Kbyte",
-                .val = 8l * 1024
+                .val = 8l * 1024,
+                .byte = DMEM_SZ_KB,
         },
         {
-                .id = MEM_FMT_MB,
+                .id = DMEM_FMT_MB,
                 .name = "mb",
                 .title = "Mbyte",
-                .val = 8192l * 1024
+                .val = 8192l * 1024,
+                .byte = DMEM_SZ_MB,
         },
         {
-                .id = MEM_FMT_GB,
+                .id = DMEM_FMT_GB,
                 .name = "gb",
                 .title = "Gbyte",
-                .val = 8192l * 1024 * 1024
+                .val = 8192l * 1024 * 1024,
+                .byte = DMEM_SZ_GB,
         },
         {
-                .id = MEM_FMT_TB,
+                .id = DMEM_FMT_TB,
                 .name = "tb",
                 .title = "Tbyte",
-                .val = 8192l * 1024 * 1024 * 1024
+                .val = 8192l * 1024 * 1024 * 1024,
+                .byte = DMEM_SZ_TB,
         },
 };
 
-mem_fmt_item_t *mem_get_fmt_item(size_t mem, enum mem_fmt_e fmt) {
-    mem_fmt_item_t *mem_fmt_item = NULL;
+dmem_fmt_item_t *mem_get_fmt_item(size_t mem, enum dmem_fmt_e fmt) {
+    int i;
+    dmem_fmt_item_t *mem_fmt_item = NULL;
 
     if (!fmt) {
-        for (uint8_t i = 0; i < 8; ++i) {
-            mem_fmt_item_t *_mem_fmt_item = &mem_fmt_item_ls[i];
+        for (i = 0; i < 8; i++) {
+            dmem_fmt_item_t *_mem_fmt_item = &dmem_fmt_ls[i];
 
             if (mem < _mem_fmt_item->val) {
-                mem_fmt_item = &mem_fmt_item_ls[i - 1];
+                mem_fmt_item = &dmem_fmt_ls[i - 1];
 
                 break;
             }
@@ -71,9 +78,9 @@ mem_fmt_item_t *mem_get_fmt_item(size_t mem, enum mem_fmt_e fmt) {
     return mem_fmt_item;
 }
 
-int memconv(char *dest, size_t *src, enum mem_fmt_e fmt) {
+int memconv(char *dest, size_t *src, enum dmem_fmt_e fmt) {
     double         val;
-    mem_fmt_item_t *mem_fmt_item = mem_get_fmt_item(*src, fmt);
+    dmem_fmt_item_t *mem_fmt_item = mem_get_fmt_item(*src, fmt);
 
     if (mem_fmt_item->val > 0) {
         val = (double) *src / mem_fmt_item->val;

@@ -18,4 +18,5 @@
 
 @include("../headers/conv.h" "#include <")
 @include("../headers/dev.h" "#include <")
+@include("../headers/dmem_allocate.h" "#include <")
 
