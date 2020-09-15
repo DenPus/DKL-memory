@@ -60,8 +60,10 @@ extern size_t memdev(enum memdev_e dev);
 
 typedef void *(*dmem_allocate_t)(void *ptr, size_t size);
 
-void *dmem_alloc(void *ptr, size_t size);
+extern void *dmem_alloc(void *ptr, size_t size);
 
-void *dmem_realloc(void *ptr, size_t size);
+extern void *dmem_realloc(void *ptr, size_t size);
 
-void *dmem_free(void *ptr, size_t size);
+extern void *dmem_free(void *ptr, size_t size);
+
+extern void* dmem_shared(size_t size);
